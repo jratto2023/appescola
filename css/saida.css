@@ -1,0 +1,235 @@
+.saida-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.saida-search {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.saida-input {
+    flex: 1;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #3b82f6;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #1e3a8a;
+    background: white;
+}
+
+.saida-input::placeholder {
+    color: #94a3b8;
+}
+
+.saida-btn-registro {
+    background: #3b82f6;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.saida-btn-registro:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+}
+
+.sala-accordion-header {
+    background-color: #f0f4f8;
+    color: #1e3a8a;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid #e0e7ed;
+    transition: background-color 0.2s ease;
+}
+
+.sala-accordion-header:hover {
+    background-color: #e2e8f0;
+}
+
+.sala-registros-container {
+    margin-bottom: 1.5rem;
+    border-left: 3px solid #3b82f6;
+    padding-left: 1rem;
+    overflow: hidden; /* Para a animação de abrir/fechar */
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.sala-registros-container.open {
+    max-height: 1000px; /* Um valor alto para acomodar muitos registros */
+}
+
+.saida-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid #e2e8f0;
+    transition: transform 0.2s ease;
+}
+
+.saida-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+}
+
+.saida-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.saida-label {
+    color: #3b82f6;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.saida-historico {
+    padding-top: 1.5rem;
+    border-top: 2px solid #e2e8f0;
+}
+
+.saida-aula-perdida {
+    display: inline-block;
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    margin: 0.3rem;
+    font-size: 0.9rem;
+    border: 1px solid #fca5a5;
+}
+
+/* Modal de Novo Registro */
+.modal-registro {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal-registro h3 {
+    color: #3b82f6;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.modal-registro label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.modal-registro input[type="text"],
+.modal-registro input[type="date"],
+.modal-registro input[type="time"],
+.modal-registro select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #2d3748;
+    box-sizing: border-box;
+}
+
+.modal-registro button {
+    background: #48bb78;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    margin-right: 0.5rem;
+}
+
+.modal-registro button#cancelar-saida {
+    background: #e53e3e;
+}
+
+.modal-registro button:hover {
+    opacity: 0.9;
+}
+
+.modal-registro button:last-child {
+    margin-right: 0;
+}
+
+/* Overlay para o modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .saida-search {
+        flex-direction: column;
+    }
+
+    .saida-btn-registro {
+        width: 100%;
+    }
+
+    .saida-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+.saida-acoes button {
+    padding: 8px 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.btn-deletar {
+    background-color: #ffe0e0;
+    color: #d32f2f;
+}
+
+.btn-editar {
+    background-color: #cce5ff;
+    color: #1c64b2;
+}
+
+.enviado {
+    color: #777;
+    font-style: italic;
+    margin-left: 10px;
+}
